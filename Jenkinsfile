@@ -39,7 +39,7 @@ node {
           PRIVATE_KEY=$(cat $KEY_FILE)
           SIGNING_CERT=$(cat $SIG_CERT_FILE)     
           CA_CERT=$(cat $CA_CERT_FILE)
-          valint bom git:jenkins-pki-example \
+          valint bom git:jenkins-pki-example/. \
             --config jenkins-pki-example/.valint.yaml \
             --components packages,files,dep \
             -o attest \
