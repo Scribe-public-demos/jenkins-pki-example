@@ -2,7 +2,7 @@ node {
   withEnv([
     "PATH=./temp/bin:$PATH",
     "LOGICAL_APP_NAME=PKI-Sign-demo-project",
-    "APP_VERSION=1.0.1",
+    "APP_VERSION=1.0.2",
     "AUTHOR_NAME=John-Smith", 
     "AUTHOR_EMAIL=jhon@thiscompany.com",
     "AUTHOR_PHONE=555-8426157",
