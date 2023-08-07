@@ -18,7 +18,7 @@ node {
    {
     stage('install') {
       cleanWs()
-      sh 'curl -sSfL https://get.scribesecurity.com/install.sh | sh -s -- -b ./temp/bin -D'
+      sh 'curl -sSfL https://get.scribesecurity.com/install.sh | sh -s -- -b ./temp/bin'
     }
     
     stage('checkout') {
