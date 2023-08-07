@@ -43,6 +43,7 @@ node {
             --config jenkins-pki-example/.valint.yaml \
             --components packages,files,dep \
             --context-type jenkins \
+            --format attest\
             --output-directory ./scribe/valint \
             -E -U $SCRIBE_CLIENT_ID -P $SCRIBE_CLIENT_SECRET \
             --app-name $LOGICAL_APP_NAME --app-version $APP_VERSION  \
@@ -68,6 +69,7 @@ node {
           valint bom pki-test:latest \
             --config jenkins-pki-example/.valint.yaml \
             --context-type jenkins \
+            --format attest\
             --output-directory ./scribe/valint \
             -E -U $SCRIBE_CLIENT_ID -P $SCRIBE_CLIENT_SECRET \
             --app-name $LOGICAL_APP_NAME --app-version $APP_VERSION  \
