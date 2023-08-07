@@ -93,6 +93,7 @@ node {
           valint verify pki-test:latest \
             --config jenkins-pki-example/.valint.yaml \
             --output-directory ./scribe/valint \
+            --context-type jenkins \
             -E -U $SCRIBE_CLIENT_ID -P $SCRIBE_CLIENT_SECRET \
            '''
       }
