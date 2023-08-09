@@ -69,6 +69,7 @@ node {
           valint slsa pki-test:latest \
             --config jenkins-pki-example/.valint.yaml \
             --format attest\
+            --context-type jenkins \
             --output-directory ./scribe/valint \
             -E -U $SCRIBE_CLIENT_ID -P $SCRIBE_CLIENT_SECRET \
             --app-name $LOGICAL_APP_NAME --app-version $APP_VERSION  \
