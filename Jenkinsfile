@@ -82,7 +82,7 @@ node {
       }
     }
 
-    stage('provenance-image') {
+ /*   stage('provenance-image') {
       withCredentials([
         usernamePassword(credentialsId: 'scribe-production-auth-id', usernameVariable: 'SCRIBE_CLIENT_ID', passwordVariable: 'SCRIBE_CLIENT_SECRET'),
         file(credentialsId: 'key-file', variable: 'KEY_FILE'),
@@ -103,7 +103,7 @@ node {
             --product-key $APP_NAME \
             -f '''
       }
-    }
+    } */
 
      stage('bom-image') {
       withCredentials([
