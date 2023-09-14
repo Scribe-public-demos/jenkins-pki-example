@@ -26,7 +26,35 @@ node {
             sh 'cd jenkins-pki-example; docker build -t pki-test -f ./orig-Dockerfile .'
      }
     
-    stage('bom-git') {
+    stage('git-commit-sbom') {
+      withCredentials([
+        usernamePassword(credentialsId: 'scribe-production-auth-id', usernameVariable: 'SCRIBE_CLIENT_ID', passwordVariable: 'SCRIBE_CLIENT_SECRET'),
+        file(credentialsId: 'key-file', variable: 'KEY_FILE'),
+        file(credentialsId: 'sig-cert-file', variable: 'SIG_CERT_FILE'),
+        file(credentialsId: 'ca-cert-file', variable: 'CA_CERT_FILE')
+      ]) 
+      
+      {
+        sh '''
+          PRIVATE_KEY=$(cat $KEY_FILE)
+          SIGNING_CERT=$(cat $SIG_CERT_FILE)     
+          CA_CERT=$(cat $CA_CERT_FILE)
+          valint bom git:jenkins-pki-example/. \
+            --config jenkins-pki-example/.valint.yaml \
+            --components packages,files,dep \
+            --context-type jenkins \
+            --format attest\
+            --output-directory ./scribe/valint \
+            -E -U $SCRIBE_CLIENT_ID -P $SCRIBE_CLIENT_SECRET \
+            --product-key $APP_NAME \
+            --author-name $AUTHOR_NAME --author-email AUTHOR_EMAIL --author-phone $AUTHOR_PHONE  \
+            --supplier-name $SUPPLIER_NAME --supplier-url $SUPPLIER_URL --supplier-email $SUPPLIER_EMAIL  \
+            --supplier-phone $SUPPLIER_PHONE \
+            --label is_git_commit \
+            -f '''
+      }
+    }
+     stage('bom-git') {
       withCredentials([
         usernamePassword(credentialsId: 'scribe-production-auth-id', usernameVariable: 'SCRIBE_CLIENT_ID', passwordVariable: 'SCRIBE_CLIENT_SECRET'),
         file(credentialsId: 'key-file', variable: 'KEY_FILE'),
