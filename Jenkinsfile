@@ -75,6 +75,7 @@ node {
             --output-directory ./scribe/valint \
             -E -U $SCRIBE_CLIENT_ID -P $SCRIBE_CLIENT_SECRET \
             --product-key $APP_NAME \
+            --product-version $APP_VERSION\
             --author-name $AUTHOR_NAME --author-email AUTHOR_EMAIL --author-phone $AUTHOR_PHONE  \
             --supplier-name $SUPPLIER_NAME --supplier-url $SUPPLIER_URL --supplier-email $SUPPLIER_EMAIL  \
             --supplier-phone $SUPPLIER_PHONE \
@@ -101,6 +102,7 @@ node {
             --output-directory ./scribe/valint \
             -E -U $SCRIBE_CLIENT_ID -P $SCRIBE_CLIENT_SECRET \
             --product-key $APP_NAME \
+            --product-version $APP_VERSION\
             -f '''
       }
     } */
@@ -124,6 +126,7 @@ node {
             --output-directory ./scribe/valint \
             -E -U $SCRIBE_CLIENT_ID -P $SCRIBE_CLIENT_SECRET \
             --product-key $APP_NAME \
+            --product-version $APP_VERSION\
             --author-name $AUTHOR_NAME --author-email AUTHOR_EMAIL --author-phone $AUTHOR_PHONE  \
             --supplier-name $SUPPLIER_NAME --supplier-url $SUPPLIER_URL --supplier-email $SUPPLIER_EMAIL  \
             --supplier-phone $SUPPLIER_PHONE \
