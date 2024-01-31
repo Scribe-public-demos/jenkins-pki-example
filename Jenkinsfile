@@ -69,7 +69,7 @@ node {
           CA_CERT=$(cat $CA_CERT_FILE)
           valint bom git:jenkins-pki-example/. \
             --config jenkins-pki-example/.valint.yaml \
-            --components packages,files,dep \
+            --components commits,packages,files,dep \
             --context-type jenkins \
             --format attest\
             --output-directory ./scribe/valint \
