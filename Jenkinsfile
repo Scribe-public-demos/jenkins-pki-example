@@ -150,6 +150,7 @@ node {
             --config jenkins-pki-example/.valint.yaml \
             --output-directory ./scribe/valint \
             --context-type jenkins \
+            --product-key $APP_NAME \
             -E -U $SCRIBE_CLIENT_ID -P $SCRIBE_CLIENT_SECRET \
            '''
       }
