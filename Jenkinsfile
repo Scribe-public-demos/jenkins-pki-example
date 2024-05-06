@@ -45,7 +45,7 @@ node {
             --context-type jenkins \
             --format attest\
             --output-directory ./scribe/valint \
-            -E -U $SCRIBE_CLIENT_ID -P $SCRIBE_CLIENT_SECRET \
+            -E -P $SCRIBE_CLIENT_SECRET \
             --product-key $APP_NAME \
             --author-name $AUTHOR_NAME --author-email AUTHOR_EMAIL --author-phone $AUTHOR_PHONE  \
             --supplier-name $SUPPLIER_NAME --supplier-url $SUPPLIER_URL --supplier-email $SUPPLIER_EMAIL  \
