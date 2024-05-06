@@ -4,7 +4,7 @@ scribe:
     grant-type: client_credentials
     enable: true
     audience: api.production.scribesecurity.com
-  url: https://airflow.scribesecurity.com
+  url: https://api.scribesecurity.com
   enable: true
 attest:
     cocosign:
