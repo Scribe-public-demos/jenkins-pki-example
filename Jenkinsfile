@@ -124,7 +124,7 @@ node {
             --context-type jenkins \
             --format attest\
             --output-directory ./scribe/valint \
-            -E -U $SCRIBE_CLIENT_ID -P $SCRIBE_CLIENT_SECRET \
+            -E -P $SCRIBE_CLIENT_SECRET \
             --product-key $APP_NAME \
             --product-version $APP_VERSION\
             --author-name $AUTHOR_NAME --author-email AUTHOR_EMAIL --author-phone $AUTHOR_PHONE  \
@@ -151,7 +151,7 @@ node {
             --output-directory ./scribe/valint \
             --context-type jenkins \
             --product-key $APP_NAME \
-            -E -U $SCRIBE_CLIENT_ID -P $SCRIBE_CLIENT_SECRET \
+            -E -P $SCRIBE_CLIENT_SECRET \
            '''
       }
     }
