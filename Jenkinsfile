@@ -28,7 +28,7 @@ withCredentials([
       {
             sh 'git clone -b main --single-branch https://github.com/scribe-security/jenkins-pki-example.git'
             sh 'cd jenkins-pki-example; docker build -t pki-test:latest -f ./orig-Dockerfile .'
-            sh 'docker login -u $DOCKERHUB_USERNAME ---password-stdin $DOCKERHUB_PAT'
+            sh 'docker login -u $DOCKERHUB_USERNAME --password-stdin $DOCKERHUB_PAT'
       }
      }
     
