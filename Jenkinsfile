@@ -23,7 +23,7 @@ node {
     
     stage('checkout') {
             sh 'git clone -b main --single-branch https://github.com/scribe-security/jenkins-pki-example.git'
-            sh 'cd jenkins-pki-example; docker build -t pki-test -f ./orig-Dockerfile .'
+            sh 'cd jenkins-pki-example; docker build -t pki-test:latest -f ./orig-Dockerfile .'
      }
     
     stage('git-commit-sbom') {
