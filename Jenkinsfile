@@ -12,7 +12,8 @@ node {
     "SUPPLIER_PHONE=001-001-0011",
     "PRIVATE_KEY=xxx",
     "SIGNING_CERT=yyy",
-    "CA_CERT=xxx"
+    "CA_CERT=xxx",
+    "DOCKERHUB_USERNAME: scribesecurity"
    
   ]) 
    {
@@ -22,8 +23,11 @@ node {
     }
     
     stage('checkout') {
+withCredentials([
+        usernamePassword(credentialsId: 'Dockerhub_pat', passwordVariable: 'DOCKERHUB_PAT') ])
             sh 'git clone -b main --single-branch https://github.com/scribe-security/jenkins-pki-example.git'
             sh 'cd jenkins-pki-example; docker build -t pki-test:latest -f ./orig-Dockerfile .'
+            sh 'cat $DOCKERHUB_PAT'
      }
     
     stage('git-commit-sbom') {
