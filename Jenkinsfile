@@ -24,7 +24,7 @@ node {
     
     stage('checkout') {
 withCredentials([
-        usernamePassword(credentialsId: 'Dockerhub_pat', passwordVariable: 'DOCKERHUB_PAT') ])
+        usernamePassword(credentialsId: 'Dockerhub_pat', variable: 'DOCKERHUB_PAT') ])
             sh 'git clone -b main --single-branch https://github.com/scribe-security/jenkins-pki-example.git'
             sh 'cd jenkins-pki-example; docker build -t pki-test:latest -f ./orig-Dockerfile .'
             sh 'cat $DOCKERHUB_PAT'
