@@ -43,6 +43,10 @@ node {
             --components packages,files,dep \
             --context-type jenkins \
             --format attest\
+            --attest.default x509 \
+            --ca $CA_CERT
+            --cert $SIGNING_CERT
+            --key $PRIVATE_KEY \
             --output-directory ./scribe/valint \
             -E -P $SCRIBE_CLIENT_SECRET \
             --product-key $APP_NAME \
