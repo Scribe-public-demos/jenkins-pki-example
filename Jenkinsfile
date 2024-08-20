@@ -13,7 +13,7 @@ node {
     "PRIVATE_KEY=xxx",
     "SIGNING_CERT=yyy",
     "CA_CERT=xxx",
-    "DOCKERHUB_USERNAME: scribesecurity"
+    "DOCKERHUB_USERNAME=scribesecurity"
    
   ]) 
    {
