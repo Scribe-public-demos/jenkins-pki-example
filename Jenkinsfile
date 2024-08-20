@@ -44,8 +44,8 @@ node {
             --context-type jenkins \
             --format attest\
             --attest.default x509 \
-            --ca $CA_CERT_FILE
-            --cert $SIG_CERT_FILE
+            --ca $CA_CERT_FILE \
+            --cert $SIG_CERT_FILE \
             --key $KEY_FILE \
             --output-directory ./scribe/valint \
             -E -P $SCRIBE_CLIENT_SECRET \
